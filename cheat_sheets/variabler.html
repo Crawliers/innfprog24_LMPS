@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet variabler</title>
+</head>
+<body>
+    <h1>Variabler i Javascript</h1>
+    <!--Dette er en kommentar-->
+    <p>Hei, <span id="name"></span> (<span id="age">?</span> år)</p>
+
+    <script>
+        //Deklarere variabler
+        /*
+        *Const: deklarere en konstant verdi som ikke skal endres
+        *Let: deklarere en verdi som kan endres
+        */
+       const firstname = "Liam Mathias";
+       //Semikolon er ikke nødvendig, men kan fremdeles brukes
+       console.log(firstname)
+       const lastname = "Skjerdal"
+       //Skriv ut firstname-verdi til HTML-element med id name:
+       //Vi bruker konkatinering, altså slår sammen variabler og tekst, for å skrive ut fornavn + etternavn:
+       document.getElementById("name").innerHTML = firstname + " " + lastname
+
+       //Deklarere en variabel for alder
+       coonst birthYear = 1996
+       let age = 2026 - birthYear
+       document.getElementById("age").innerHTML = age
+    </script>
+</body>
+</html>
