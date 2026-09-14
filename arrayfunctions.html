@@ -7,5 +7,76 @@
 </head>
 <body>
     <h1>Array Functions</h1>
+    <p>Vi finner antall i en array ved å bruke .length: <span id="arrayCount"></span></p>
+    <h2>To måter å skrive ut en Array på:</h2>
+    <p>.toString(): <span id="toString"></span></p>
+    <p>.join(): <span id="join"></span></p>
+
+    <h2>Array etter slettemetoder er kjørt</h2>
+    <p id="deleted"></p>
+
+    <script>
+        const books = [
+            "Silver Eyes",
+            "Harry potter og de Vises Sten",
+            "Fourth Wing",
+            "Bibelen",
+            "Nålen",
+            "Jævla Drittsystem",
+            "Don't make me think",
+            "Twisted Ones",
+            "Hunger games",
+            "Surrounded by Idiots"
+        ]
+
+        //Counting number in the array
+        document.getElementById("arrayCount").innerHTML = books.length
+
+        //LEGGE TIL ELEMENTER I ARRAY:
+        //.push(element): Legger inn element på slutten av array
+        books.push("LOTR: Fellowship of the Ring")
+        //.unshift(element): Legger inn element i starten av array, og forskyver indexer!
+        books.unshift("LOTR: Two Towers")
+        //.splice(startindex, number of elements modified, element(s))
+        //startindexs: hvilken index vi starter å manipulere array på
+        //number of elements modified: Hvis vi skal slette elementer, hvor manger fra og med startindex (eksempel: Hvis startindex er 2, og antall elementer er 2 slettes index index 2 og 3). Når vi legger til elementer, skal number of elements modified alltid være 0.
+        books.splice(5, 0, "LOTR: Return of the King")
+
+
+        //.toString(): skriver ut en kommaseparert liste av en array
+        //.toString() er en metode, ikke en funksjon, og trenger derfor parantes etters
+        document.getElementById("toString").innerHTML = books.toString()
+
+        //.join(param): join skriver ut alle elementene i en array, separert av param
+        document.getElementById("join").innerHTML = books.join(", ")
+
+
+        //FJERNE ELEMENTER FRA ARRAY:
+        //.pop(): Sletter det siste elementet i array
+        books.pop()
+        //.shift(): Sletter det første elementet i array
+        books.shift()
+        //.splice(startindex, number of elements to delete)
+        //books.splice(4, 1)
+
+        //.indexOf(element): Finner det første elementet i array som matcher parameteret element, og returnerer indexen.
+        const indexFound = books.indexOf("LOTR: Return of the King")
+        console.log("Index til LOTR-bok: ", indexFound)
+
+        //Bruke indexOf-verdien i variabelen indexFound til å slette riktig bok:
+        books.splice(indexFound, 1)
+        //Hvis elementet vi forsøker å finne indexen til ikke finnes, returnerer indexOf -1
+        
+
+        //Hvordan sjekke om en verdi finnes i en array:
+        const bookExists = books.includes("Fourth Wing")
+        console.log("Finnes Fourth Wing? ", bookExists)
+
+
+
+        //Vi bruker kun navnet på array, siden books allerede er manipulert i linje books.pop(). Vi legger til .join for at den skal være mer leselig.
+        document.getElementById("deleted").innerHTML = books.join(", ")
+
+    </script>
 </body>
 </html>
