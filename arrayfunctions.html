@@ -15,6 +15,17 @@
     <h2>Array etter slettemetoder er kjørt</h2>
     <p id="deleted"></p>
 
+    <h2>Sortering</h2>
+    <p>Sortert A-Å: <span id="sortAZ"></span></p>
+    <p>Sortert Å-A: <span id="sortZA"></span></p>
+
+    <h2>Sortering av tall</h2>
+    <p>Sortert 0-9: <span id="sort09"></span></p>
+    <p>Sortert 9-0: <span id="sort90"></span></p>
+
+    <h3>Are you LOST?</h3>
+    <p>Just count <span id="lost"></span></p>
+
     <script>
         const books = [
             "Silver Eyes",
@@ -76,6 +87,26 @@
 
         //Vi bruker kun navnet på array, siden books allerede er manipulert i linje books.pop(). Vi legger til .join for at den skal være mer leselig.
         document.getElementById("deleted").innerHTML = books.join(", ")
+
+        //Sortere en array fra A-Å: (Fungerer kun for array med tekststrenger)
+        books.sort()
+        document.getElementById("sortAZ").innerHTML = books.join(", ")
+
+        //Sortere en array fra Å-A:
+        books.reverse()
+        document.getElementById("sortZA").innerHTML = books.join(", ")
+
+        //Sortere en array med tall:
+        const tall = [99, 6, 34, 8, 9, 8, 111, 44, 83, 29, 6000, 15, 69, 36, 366, 42]
+        tall.sort(function(a, b) { return a - b})
+        document.getElementById("sort09").innerHTML = tall.join(", ")
+
+        //Sortere en array med tall reversert:
+        tall.sort(function(a, b) { return b - a})
+        document.getElementById("sort90").innerHTML = tall.join(", ")
+
+        const lost = [4, 8, 15, 16, 23, 42]
+        document.getElementById((scrambleArray("lost")).innerHTML = tall.join(", ")
 
     </script>
 </body>
