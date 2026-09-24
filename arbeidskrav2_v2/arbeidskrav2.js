@@ -1,4 +1,4 @@
-/*Arbeidskrav 2 .js fil*/ */
+/*Arbeidskrav 2 .js fil*/
 
 const students = [
     { name: "Alice", age: 20, grade: "6", workexperience: 2 },
@@ -32,4 +32,18 @@ const grades = [
     { letter: "F", score: 1}
 ]
 
+/*Beregne antall studenter*/
 document.getElementById("studentCount").innerHTML = students.length
+
+/*Beregne totalsummen av karakterene*/
+let totalGrade = 0;
+    for (const student of students){
+            totalGrade = totalGrade + Number(student.grade);
+
+    }
+/*Beregne gjennomsnitt av karakter delt på antall studenter*/
+let averageGrade = totalGrade / students.length;
+
+/*Print avgGrade*/
+document.getElementById("averageGrade").innerHTML = averageGrade
+
