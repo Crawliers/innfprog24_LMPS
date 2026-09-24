@@ -1,3 +1,5 @@
+/*Arbeidskrav 2 .js fil*/ */
+
 const students = [
     { name: "Alice", age: 20, grade: "6", workexperience: 2 },
     { name: "Bob", age: 22, grade: "5", workexperience: 1 },
@@ -29,3 +31,5 @@ const grades = [
     { letter: "E", score: 2 },
     { letter: "F", score: 1}
 ]
+
+document.getElementById("studentCount").innerHTML = students.length
