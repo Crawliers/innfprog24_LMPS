@@ -11,6 +11,11 @@
     <p>Henter forfatter 2 på bok 2: <span id="book2Author2"></span></p>
     <p>Henter alle forfattere til bok 2: <span id="book2AllAuthors"></span></p>
 
+    <h2>Bokregister</h2>
+    <section id="books">
+        <p>Laster inn bøker...</p>
+    </section>
+
     <script>
         const bokregister = [
             {
@@ -43,6 +48,22 @@
         //Henter forfatter 2 på bok 2:
         document.getElementById("book2Author2").innerHTML = bokregister[1].author[1]
         document.getElementById("book2AllAuthors").innerHTML = bokregister[1].author.join(", ")
+
+        //Bruker .map for å hente alle bøker, og bygger HTML i booksHTML-variabelen
+        let booksHTML = ""
+        bokregister.map(b => { booksHTML += 
+            `<article>
+                <h3>${b.title}</h3>
+                <p class="isbnnummer">${b.isbn}</p>
+                <p>${b.author.length === 1 ? "Forfatter" : "Forfattere"}: ${b.author.join(", ")}</p>
+                <p>Sidetall: ${b.pagecount}</p>
+            </article>`
+            //<p>${b.author[0] + [", "] + b.author[1]}</p> forsøkt over forfattere. Gir undefined.
+            //Template ### for konkatinering og bedre oversikt
+            //Turnery Operator === forkortet IF-test, bruker ":" som else
+        })
+        console.log(booksHTML)
+        document.getElementById("books").innerHTML = booksHTML
     </script>>
 </body>
 </html>

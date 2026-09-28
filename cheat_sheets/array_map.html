@@ -22,6 +22,7 @@
 
         //Vi bruker map, som lagrer hver tittel i book og legger denne til listen med id books:
         books.map(book => { document.getElementById("books").innerHTML += "<li>" + book + "</li>" } )
+                                                                //Kombinasjonen av += forhindrer overskriving
 
         //Vi bruker map for å bygge en HTML-streng i koden vår, som vi senere skriver ut:
         let booksHTML = ""
