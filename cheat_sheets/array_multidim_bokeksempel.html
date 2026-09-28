@@ -38,7 +38,8 @@
                 title: "Fourth Wing",
                 author: ["Rebecca Yarros"],
                 pagecount: 512,
-                isbn: 9783423220996,
+                //isbn: 9783423220996,
+                isbn: 9780349437019,
             },
 
             {
@@ -52,7 +53,8 @@
                 title: "Harry Potter: De vises Stein",
                 author: ["JK Rowling"],
                 pagecount: 333,
-                isbn: 9788202434687
+                isbn: 9788202434687,
+                //isbn: 9780545582889,
             }
         ]
 
@@ -69,6 +71,7 @@
         let booksHTML = ""
         bokregister.map(b => { booksHTML += 
             `<article>
+                <img src="https://covers.openlibrary.org/b/isbn/${b.isbn}-M.jpg" />
                 <h3>${b.title}</h3>
                 <p class="isbnnummer">${b.isbn}</p>
                 <p>${b.author.length === 1 ? "Forfatter" : "Forfattere"}: ${b.author.join(", ")}</p>
