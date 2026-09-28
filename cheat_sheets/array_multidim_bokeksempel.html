@@ -6,7 +6,7 @@
     <title>Array Cheat Sheet: Multidimensjonal Array</title>
 
     <style>
-        #books {
+        #books, #longreads {
             display: flex;
             gap: .5rem;
 
@@ -29,6 +29,11 @@
 
     <h2>Bokregister</h2>
     <section id="books">
+        <p>Laster inn bøker...</p>
+    </section>
+
+    <h2>Langlesning</h2>
+    <section id="longreads">
         <p>Laster inn bøker...</p>
     </section>
 
@@ -78,11 +83,33 @@
                 <p>Sidetall: ${b.pagecount}</p>
             </article>`
             //<p>${b.author[0] + [", "] + b.author[1]}</p> forsøkt over forfattere. Gir undefined.
-            //Template ### for konkatinering og bedre oversikt
+            //Template literal for konkatinering og bedre oversikt
             //Turnery Operator === forkortet IF-test, bruker ":" som else
         })
         console.log(booksHTML)
         document.getElementById("books").innerHTML = booksHTML
+
+        //Bruker .filter for å filtrere ut bøker med mer enn 400 sider.
+        let longreadHTML = ""
+        const longReads = bokregister.filter(l => l.pagecount >= 400)
+        console.log("Longread: ", longReads)
+        longReads.map(l => {
+            longreadHTML += `<article>
+                <img src="https://covers.openlibrary.org/b/isbn/${l.isbn}-M.jpg" />
+                <h3>${l.title}</h3>
+                <p class="isbnnummer">${l.isbn}</p>
+                <p>${l.author.length === 1 ? "Forfatter" : "Forfattere"}: ${l.author.join(", ")}</p>
+                <p>Sidetall: ${l.pagecount}</p>
+            </article>`
+        })
+        document.getElementById("longreads").innerHTML = longreadHTML
+
+        //Filtrere ut bøker med mer enn 1 forfatter.
+        let multiAuthorHTML =""
+        const multiAuthor = bokregister.filter(t => t.author.length > 1)
+        console.log("Multiple Authors", multiAuthor)
+
+        
     </script>>
 </body>
 </html>
