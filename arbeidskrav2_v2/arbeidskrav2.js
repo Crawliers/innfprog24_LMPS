@@ -43,7 +43,7 @@ let totalGrade = 0;
     }
 //Beregne gjennomsnitt av karakter delt på antall studenter
 let averageGrade = totalGrade / students.length;
-    Math.ceil(averageGrade);
+    
 
 //Print avgGrade
 document.getElementById("averageGrade").innerHTML = averageGrade
