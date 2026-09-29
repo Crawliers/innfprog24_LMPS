@@ -45,8 +45,26 @@ let totalGrade = 0;
 let averageGrade = totalGrade / students.length;
     
 //Konvertering av tallkarakter til bokstavkarakter
-
+if(averageGrade === 6)
+    document.getElementById(grades.letter[0])
+if(averageGrade === 5)
+    document.getElementById(grades.letter[1])
+if(averageGrade === 4)
+    document.getElementById(grades.letter[2])
+if(averageGrade === 3)
+    document.getElementById(grades.letter[3])
+if(averageGrade === 2)
+    document.getElementById(grades.letter[4])
+if(averageGrade === 1)
+    document.getElementById(grades.letter[5])
 
 //Print avgGrade
 document.getElementById("averageGrade").innerHTML = averageGrade
+
+//Print averageGrade rundet opp
+function (roundedArray) {
+    Math.ceil(roundedArray)
+    
+
+}
 
