@@ -44,11 +44,9 @@ let totalGrade = 0;
 //Beregne gjennomsnitt av karakter delt på antall studenter
 let averageGrade = totalGrade / students.length;
     
+//Konvertering av tallkarakter til bokstavkarakter
+
 
 //Print avgGrade
 document.getElementById("averageGrade").innerHTML = averageGrade
-
-//Konvertering av tallkarakter til bokstavkarakter
-let bokstavkarakter = ""
-    for (const grade of grades.letter)
 
