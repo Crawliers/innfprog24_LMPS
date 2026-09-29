@@ -7,5 +7,30 @@
 </head>
 <body>
     
+    <script>
+        const people = ["Marius", "Tore", "Susanne", "Monica", "Arne", "Zoltan", "Beate"]
+        
+        //Forsøk på å lage function som sorterer array alfabetisk, deretter oppretter HTML-tag som printer navnene
+        function createList(names = people, htmltag = "p") {
+            const liste = document.createElement(htmltag)
+            people.sort()
+            liste.innerHTML = names.join(", ")
+            document.body.appendChild(liste)
+        }
+        createList()
+
+        //Tore Marius eksempelløsning
+        function sortArray(array) {
+            array.sort() //Sortere arrayen
+            const ptag = document.createElement("p") //Lage ny p-tag
+            ptag.innerHTML = array.join(", ") //Fylle ptag med array, kommaseparert
+            document.body.appendChild(ptag) //Skrive ut ptag
+
+            console.log(ptag) //Brukes som testutskrift
+
+        }
+        sortArray(people)
+
+    </script>
 </body>
 </html>
