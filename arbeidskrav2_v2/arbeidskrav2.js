@@ -101,7 +101,7 @@ document.getElementById("gradeF").innerHTML = gradeFStudents.length
 
 
 //Gjennomsnittsalder
-let gjennomsnittsAlder =""
-const avgAge = students.map(a => a.age)
-const utregnetAlder = avgAge / students.length
-document.getElementById("averageAge").innerHTML = utregnetAlder
+let gjennomsnittsAlder = ""
+//const totalAge = students.reduce(a => a.age, 0)//
+let avgAge = totalAge / students.length
+document.getElementById("averageAge").innerHTML = avgAge
