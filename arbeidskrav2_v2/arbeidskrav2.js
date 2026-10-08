@@ -102,6 +102,16 @@ document.getElementById("gradeF").innerHTML = gradeFStudents.length
 
 //Gjennomsnittsalder
 let gjennomsnittsAlder = ""
-//const totalAge = students.reduce(a => a.age, 0)//
+const totalAge = students.reduce((total, students) => total + students.age, 0)
 let avgAge = totalAge / students.length
-document.getElementById("averageAge").innerHTML = avgAge
+document.getElementById("averageAge").innerHTML = avgAge.toFixed(2)
+
+
+//Antall fra VGS
+const ungdom = students.filter(a => a.age <= 19)
+document.getElementById("highSchool").innerHTML = ungdom.length
+
+//Antall med yrkeserfaring
+const byggMesterBoB = students.filter(b => b.workexperience >= 1)
+document.getElementById("workExperience").innerHTML = byggMesterBoB.length
+
