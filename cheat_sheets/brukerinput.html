@@ -73,13 +73,29 @@
         })
 
         //EventListener som sjekker all input i et input-felt. Funksjonen kjøres for hver eneste endring
+        /*
         document.getElementById("birthyearLive").addEventListener("input", function (event) {
             const birthyearLive = document.getElementById("birthyearLive").value
             const ageLive = 2026 - birthyearLive
 
             document.getElementById("ageLive").innerHTML = ageLive
             document.getElementById("birthyearLivePrint").innerHTML = birthyearLive
-        })
+        })*/
+
+        //EventListener som sjekker all input i et input-felt. Funksjonen kjøres etter et lite delay
+        let delayTimer;
+        document.getElementById("birthyearLive").addEventListener("input", function (event) {
+            clearTimeout(delayTimer);
+
+            delayTimer = setTimeout(function() {
+                const birthyearLive = document.getElementById("birthyearLive").value;
+                const ageLive = 2026 - birthyearLive;
+
+                document.getElementById("ageLive").innerHTML = ageLive;
+                document.getElementById("birthyearLivePrint").innerHTML = birthyearLive;
+            }, 500);
+        });
+
     </script>
 </body>
 </html>
